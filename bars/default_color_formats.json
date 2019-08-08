@@ -1,0 +1,4 @@
+{
+	"polybar": "%{{F{color}}}{symbol}",
+	"tint2": "<span foreground='{color}'>{symbol}</span>"
+}

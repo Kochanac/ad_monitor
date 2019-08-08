@@ -1,24 +1,27 @@
 {
 	"enabled": true,
 
-	"bar": "Polybar",
+	"bar": "tint2",
 	"url": "192.168.1.2:8080",
 	"parser": "Hackerdom_checksystem",
 	"teamname": "Kochan",
 
 	"refresh_rate": 0, 
-	"": "in seconds, 0 to parse once",
+	"refresh_rate_comment": "in seconds, 0 to parse once",
 
-	"format": "r.{round} {name} #{place} {score} {statuses}",
+	"format": "r. {round}\n{name}\n#{place}\n{score}\n{statuses}",
 	
+	"color_format": "format string to color text for your bar, {color} from colors array below {symbol} from \"symbol\" below",
+	"color_format_comment": "preset bars: polybar, tint2 (defined in bars/default_color_formats.json), for them you can leave color_format empty",
+
 	"round_placeholder": "~~",
-	"symbol": " ",
+	"symbol": "\n",
 	"colors": {
 		"up": "#00ff00",
 		"down": "#e97c7c",
 		"mumble": "#f9a963",
 		"corrupt": "#ffef65",
-		"default": "#000000"
+		"default": "#ffffff"
 	}
 
 }

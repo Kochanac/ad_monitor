@@ -7,8 +7,6 @@
 ### Usage
 edit config.json then run admon.py, it will [TODO: repeatedly] return ctf status string
 
-## Supported bars:
-* [` Polybar `](https://github.com/polybar/polybar.git)
 
 ## Supported checksystems:
 * [` Hackerdom_checksystem `](https://github.com/HackerDom/checksystem), [parser repo](https://github.com/Vindori/hackerdom-board-parser)

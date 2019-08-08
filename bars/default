@@ -1,18 +1,23 @@
 #!/usr/bin/python3
 
 import sys, json
+from os import path
+
+base_dir = path.dirname(__file__)
+
 
 data = json.loads(sys.argv[1])
 config = json.loads(sys.argv[2])
+default_color_formats = json.load(open(path.join(base_dir, "default_color_formats.json"), 'r'))
 
 name = data['name']
 place = data['place']
 score = data["score"]
 
-wcolor = "%{{F{color}}}{symbol}"
+color_format = default_color_formats[config["bar"]] if config["bar"] in default_color_formats else config["color_format"]
 
 statuses_string = ''.join(
-                          [wcolor.format(color=config["colors"].get(service["status"], 'default'), symbol=config["symbol"]) for service in data["services"].values()]
+                          [color_format.format(color=config["colors"].get(service["status"], config["colors"]['default']), symbol=config["symbol"]) for service in data["services"].values()]
                           )
 
 print(config["format"].format(
