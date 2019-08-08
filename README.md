@@ -1,4 +1,4 @@
-# Attack-Defence CTF Monitor for your statusbar
+# Attack-Defence CTF Monitor for your text statusbar
 
 ![img][example1]
 
