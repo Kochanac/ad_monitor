@@ -2,7 +2,7 @@
 	"enabled": true,
 
 	"bar": "tint2",
-	"url": "test",
+	"url": "192.168.1.2:8080",
 	"parser": "Hackerdom_checksystem",
 	"teamname": "Kochan",
 
@@ -15,7 +15,7 @@
 	"color_format_comment": "preset bars: polybar, tint2 (defined in bars/default_color_formats.json), for them you can leave color_format empty",
 
 	"round_placeholder": "~~",
-	"symbol": "\n",
+	"symbol": " ",
 	"colors": {
 		"up": "#00ff00",
 		"down": "#e97c7c",

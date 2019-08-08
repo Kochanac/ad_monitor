@@ -16,9 +16,16 @@ score = data["score"]
 
 color_format = default_color_formats[config["bar"]] if config["bar"] in default_color_formats else config["color_format"]
 
-statuses_string = ''.join(
-                          [color_format.format(color=config["colors"].get(service["status"], config["colors"]['default']), symbol=config["symbol"]) for service in data["services"].values()]
-                          )
+symbols = [config["symbol"] for _ in range(len(data["services"]))] # ебучий говнокод
+symbols[-1] = symbols[-1].strip()
+
+colored_symbols = [
+					color_format.format(color=config["colors"].get(service["status"], config["colors"]['default']),
+										symbol=symbols[i])
+					for i, service in enumerate(data["services"].values())
+					] # help pls
+
+statuses_string = ''.join(colored_symbols)
 
 print(config["format"].format(
                               place=place,
