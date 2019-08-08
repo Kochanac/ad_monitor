@@ -7,12 +7,9 @@ from os import path
 base_dir = path.dirname(__file__)
 
 def get(url, teamname, parser):
-	# exec('from parsers import {}'.format(path_to_parser))
-	# parsesh = "./parsers/{parser} '{url}' '{teamname}'".format(parser=parser.lower(), url=url, teamname=teamname)
-	parsepath = path.join(base_dir, "parsers", parser.lower())
-	parsesh = [parsepath, url, teamname]
-	
-	info = subprocess.run( parsesh, stdout=subprocess.PIPE).stdout.decode('utf-8')
+	parserpath = path.join(base_dir, "parsers", parser.lower())
+	parsesh = [parserpath, url, teamname]
+	info = subprocess.run( parsesh, stdout=subprocess.PIPE ).stdout.decode('utf-8')
 
 	data = json.loads(info)
 
@@ -31,11 +28,8 @@ def get(url, teamname, parser):
 
 
 def render(data, bar, config):
-	# rendersh = "./bars/{bar} '{data}'".format(bar=bar.lower(), data=json.dumps(data))
 	barpath = path.join(base_dir, "bars", bar.lower())
 	rendersh = [barpath, json.dumps(data), json.dumps(config)]
-
 	rendered = info = subprocess.run( rendersh, stdout=subprocess.PIPE ).stdout.decode("utf-8")
 
 	return rendered
-	
