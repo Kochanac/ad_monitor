@@ -5,7 +5,7 @@
 [example1]: ./examples/polybar-1.png
 
 ### Usage
-edit config.json then run admon.py, it will [TODO: repeatedly] return ctf status string
+edit config.json and add admon.py to your statusbar config
 
 ## Supported checksystems:
 * [` Hackerdom_checksystem `](https://github.com/HackerDom/checksystem), [parser repo](https://github.com/Vindori/hackerdom-board-parser)
