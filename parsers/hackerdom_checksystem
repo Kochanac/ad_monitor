@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+from sys import argv, path; path.append(path[0]+'/hackerdom_board_parser') # говнокодим агааа
+from hackerdom_board_parser import game
+import json
+
+ad = game.AD_Game(argv[1])
+team_info = ad.get_info_by_name(argv[2])
+
+team_info["services"] = team_info["info"]
+team_info.pop("info")
+team_info["round"] = ad.round
+
+for service in team_info["services"]:
+	status = team_info["services"][service]["status"]
+	team_info["services"][service]["status"] = status[status.find("_")+1:]
+
+
+print(json.dumps(team_info))

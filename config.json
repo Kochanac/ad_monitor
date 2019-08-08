@@ -1,0 +1,24 @@
+{
+	"enabled": true,
+
+	"bar": "Polybar",
+	"url": "192.168.1.2:8080",
+	"parser": "Hackerdom_checksystem",
+	"teamname": "Kochan",
+
+	"refresh_rate": 0, 
+	"": "in seconds, 0 to parse once",
+
+	"format": "r.{round} {name} #{place} {score} {statuses}",
+	
+	"round_placeholder": "~~",
+	"symbol": " ",
+	"colors": {
+		"up": "#00ff00",
+		"down": "#e97c7c",
+		"mumble": "#f9a963",
+		"corrupt": "#ffef65",
+		"default": "#000000"
+	}
+
+}

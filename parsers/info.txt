@@ -1,0 +1,19 @@
+output of parser (should be) json in format :
+
+{
+	"name": "team_name",
+	"score": 2313.0,
+	"place": 12,
+	"round": 43, // not strict
+	"services": {
+		"service1":{
+			"status":"up", // up/down/mumble/corrupt or else if it has color in config file
+			"sla":0.5
+			"flag_points": 12.0,
+			"flags": { // not strict
+				"got": 5,
+				"lost": 10
+			}
+		}
+	}
+}

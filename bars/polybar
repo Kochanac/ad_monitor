@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+import sys, json
+
+data = json.loads(sys.argv[1])
+config = json.loads(sys.argv[2])
+
+name = data['name']
+place = data['place']
+score = data["score"]
+
+wcolor = "%{{F{color}}}{symbol}"
+
+statuses_string = ''.join(
+                          [wcolor.format(color=config["colors"].get(service["status"], 'default'), symbol=config["symbol"]) for service in data["services"].values()]
+                          )
+
+print(config["format"].format(
+                              place=place,
+                              round=(data["round"] if "round" in data else config["round_placeholder"]),
+                              score=score,
+                              statuses=statuses_string,
+                              name=name)
+							  )
